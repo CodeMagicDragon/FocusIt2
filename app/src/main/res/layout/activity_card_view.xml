@@ -23,7 +23,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:progressBackgroundTint="@color/backgroundColor"
-        android:progressTint="@color/colorPrimaryDark"/>
+        android:progressTint="@color/colorPrimary"/>
 
     <View
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
         android:layout_weight="4"
         android:textColor="@color/textColor"
         android:visibility="invisible"
-        android:theme="@style/StandartButton"
+        android:background="@drawable/button_shape"
         android:text="Далее"/>
 
     <View

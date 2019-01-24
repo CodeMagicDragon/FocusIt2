@@ -5,48 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/mainbackground"
-    >
-    tools:context=".Show_note">
+    android:background="@color/backgroundColor"
+    tools:context=".FullBlockActivity">
 
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Р—Р°Р±Р»РѕРєРёСЂРѕРІР°РЅРѕ."
-        android:textColor="@color/background"
+        android:text="Заблокировано."
+        android:textColor="@color/textColor"
         android:textSize="40dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="0.4"
         android:gravity="center"
-        android:text="Р Р°Р·Р±Р»РѕРєРёСЂРѕРІР°С‚СЊ РјРѕР¶РЅРѕ РІ РЅР°СЃС‚СЂРѕР№РєР°С… Focus it"
-        android:textColor="@color/background"
-        android:textSize="30dp" />
+        android:text="Разблокировать можно в настойках Focus it"
+        android:textColor="@color/textColor"
+        android:textSize="16dp" />
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
+        android:background="@mipmap/block_image"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true" />
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5" />
+        android:layout_weight="0.1" />
     <Button
-        android:id="@+id/homeButton"
+        android:id="@+id/home_button"
         android:layout_width="match_parent"
         android:layout_height="71dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
-        android:theme="@style/StandartButton"
+        android:background="@drawable/button_shape"
         android:text="Выйти"
-        android:textColor="@color/background"
+        android:textColor="@color/textColor"
         android:textSize="20sp"
         android:visibility="visible" />
 </LinearLayout>

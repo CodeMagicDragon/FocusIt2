@@ -75,6 +75,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.textCategory.setText(category.language);*/
         cd = App.getInstance().getAppDatabase().getCardDao();
         holder.textCategory.setText(unicLang.get(position));
+        holder.textCategory.setTextColor(0xffffffff);
         holder.itemView.setOnClickListener(new View.OnClickListener()
         {
             @Override

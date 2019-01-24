@@ -2,7 +2,7 @@ package com.part.project.projectsettingspart;
 
 public class CategoryModel {
 
-    String word, translate, language, cardTheme;
+    public String word, translate, language, cardTheme;
 
     public CategoryModel(){
 

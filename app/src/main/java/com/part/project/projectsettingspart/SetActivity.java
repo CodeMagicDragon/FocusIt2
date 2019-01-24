@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -32,6 +34,7 @@ public class SetActivity extends DeleteDialogAbstractActivity
     String deletedSetName;
     CardDao cd;
     Intent intent;
+    Animation animAlpha;
     boolean editMode;
 
     @Override
@@ -41,6 +44,7 @@ public class SetActivity extends DeleteDialogAbstractActivity
         setContentView(R.layout.activity_set);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
         setList = findViewById(R.id.set_edit_list);
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         buttonAdd = findViewById(R.id.set_add_button);
         sp = getApplicationContext().getSharedPreferences("edit_card_sp", Context.MODE_PRIVATE);
         cd = App.getInstance().getAppDatabase().getCardDao();
@@ -75,6 +79,7 @@ public class SetActivity extends DeleteDialogAbstractActivity
             @Override
             public void onClick(View v)
             {
+                v.startAnimation(animAlpha);
                 intent = new Intent(SetActivity.this, CardListEditActivity.class);
                 intent.putExtra("set_name", "");
                 startActivity(intent);

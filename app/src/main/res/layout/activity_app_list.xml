@@ -18,9 +18,9 @@
         android:id="@+id/app_list_add_b"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@drawable/button_shape"
         android:layout_weight="1"
         android:layout_gravity="center"
         android:textColor="@color/textColor"
-        android:text="Сохранить"
-        android:theme="@style/StandartButton"/>
+        android:text="Сохранить"/>
 </LinearLayout>

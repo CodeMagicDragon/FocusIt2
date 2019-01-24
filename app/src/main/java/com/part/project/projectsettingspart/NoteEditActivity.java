@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -14,6 +16,7 @@ public class NoteEditActivity extends AppCompatActivity
     EditText note;
     Button noteButton;
     SharedPreferences sPref;
+    Animation animAlpha;
 
 
     @Override
@@ -23,6 +26,7 @@ public class NoteEditActivity extends AppCompatActivity
         setContentView(R.layout.activity_note_edit);
         note = findViewById(R.id.note);
         noteButton = findViewById(R.id.btn_note);
+       animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         sPref = (getApplicationContext()).getSharedPreferences("note_data", Context.MODE_PRIVATE);
         setTitle("Заметки");
         loadText();
@@ -31,6 +35,7 @@ public class NoteEditActivity extends AppCompatActivity
     //@Override
     public void onClick(View v)
     {
+        v.startAnimation(animAlpha);
         if(v.getId() == R.id.btn_note)
         {
             saveText();

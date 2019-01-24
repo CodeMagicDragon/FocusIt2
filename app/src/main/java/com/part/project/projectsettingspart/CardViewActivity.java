@@ -48,6 +48,7 @@ public class CardViewActivity extends AppCompatActivity
         progressBar.setProgress(0);
         progressBar.setMax(300);
         progressBar.setScaleY(15f);
+        final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         animTranslate = AnimationUtils.loadAnimation(this, R.anim.anim_translate);
         animTranslate2 = AnimationUtils.loadAnimation(this, R.anim.anim_translate2);
         sp = (getApplicationContext()).getSharedPreferences("settings", Context.MODE_PRIVATE);
@@ -73,6 +74,7 @@ public class CardViewActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                v.startAnimation(animAlpha);
                 if (ind + 1 == cardNum)
                 {
                     if (!fullSetMode)

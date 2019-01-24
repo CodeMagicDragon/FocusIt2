@@ -18,6 +18,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,13 +33,14 @@ public class SettingsActivity extends AppCompatActivity
 {
     ListView settingsList;
     ListView blockSettingsList;
-    String[] settingsNames = {"Cет для режима", "Блокируемые приложения", "Заметки"};
+    String[] settingsNames = {"Выбрать сет", "Блокируемые приложения", "Заметки"};
     String[] blockSettingsNames = {"Полная блокировка", "Показывать карточки", "Показывать заметки"};
     boolean[] blockOptions;
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
     Button startFullTestButton;
     Intent intent;
+    Animation animAlpha;
 
 
     @Override
@@ -47,6 +50,7 @@ public class SettingsActivity extends AppCompatActivity
         setContentView(R.layout.activity_settings);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
         settingsList = findViewById(R.id.settings_list);
+        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         blockSettingsList = findViewById(R.id.block_settings_list);
         startFullTestButton = findViewById(R.id.start_full_test_button);
         sp = (getApplicationContext()).getSharedPreferences("settings", Context.MODE_PRIVATE);
@@ -103,6 +107,7 @@ public class SettingsActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                v.startAnimation(animAlpha);
                 spEditor.putBoolean("full_set_mode", true);
                 spEditor.apply();
                 startActivity(new Intent(SettingsActivity.this, CardViewActivity.class));
