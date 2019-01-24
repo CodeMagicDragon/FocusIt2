@@ -47,7 +47,7 @@ public class MainService extends IntentService
     Map<String, Date> APPS;
     Map<String, Long> blockAllTimeList;
     String lastDetectedApp = "";
-    long APP_TIME = 2 * 60 * 1000 * 1000000;
+    long APP_TIME = 1 * 60 * 1000;
     long serviceTime = 0;
 
     // add time sync in card view and note classes
@@ -104,25 +104,25 @@ public class MainService extends IntentService
                     }
                     if (mySortedMap != null && !mySortedMap.isEmpty())
                     {
-                        if (sp.getBoolean("test_passed", false))
+                        String currentApp = mySortedMap.get(mySortedMap.lastKey()).getPackageName();
+                        if (sp.getBoolean("test_passed", false) && !currentApp.equals("com.part.project.projectsettingspart"))
                         {
-                            if (blockAllTimeList.containsKey(lastDetectedApp))
+                            if (blockAllTimeList.containsKey(currentApp))
                             {
-                                blockAllTimeList.remove(lastDetectedApp);
+                                blockAllTimeList.remove(currentApp);
                             }
-                            blockAllTimeList.put(lastDetectedApp, serviceTime);
+                            blockAllTimeList.put(currentApp, serviceTime);
                             spEditor.putBoolean("test_passed", false);
                             spEditor.apply();
                         }
-                        String currentApp = mySortedMap.get(mySortedMap.lastKey()).getPackageName();
-                        if (lastDetectedApp != null && blockedApps != null && (!currentApp.equals(lastDetectedApp)) && blockedApps.contains(currentApp)
-                                && (!blockAllTimeList.containsKey(lastDetectedApp) || (blockAllTimeList.containsKey(lastDetectedApp)
-                                && (blockAllTimeList.get(lastDetectedApp) + APP_TIME < serviceTime))))
+                        if (currentApp != null && blockedApps != null && (!currentApp.equals(lastDetectedApp)) && blockedApps.contains(currentApp)
+                                && (!blockAllTimeList.containsKey(currentApp) || (blockAllTimeList.containsKey(currentApp)
+                                && (blockAllTimeList.get(currentApp) + APP_TIME < serviceTime))))
                         {
-                            /*if (blockAllTimeList.containsKey(lastDetectedApp))
+                            if (blockAllTimeList.containsKey(currentApp))
                             {
-                                blockAllTimeList.remove(lastDetectedApp);
-                            }*/
+                                blockAllTimeList.remove(currentApp);
+                            }
                             spEditor.putBoolean("start_activity", false);
                             spEditor.apply();
                             Intent intent = new Intent();
