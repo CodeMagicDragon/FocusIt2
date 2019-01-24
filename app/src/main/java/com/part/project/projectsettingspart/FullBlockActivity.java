@@ -17,7 +17,6 @@ public class FullBlockActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_block);
-        final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         homeButton = findViewById(R.id.home_button);
         getSupportActionBar().hide();
         homeButton.setOnClickListener(new View.OnClickListener()
@@ -25,7 +24,6 @@ public class FullBlockActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                v.startAnimation(animAlpha);
                 Intent home = new Intent(Intent.ACTION_MAIN);
                 home.addCategory(Intent.CATEGORY_HOME);
                 home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -54,7 +54,6 @@ public class AppListActivity extends AppCompatActivity
         setTitle("Выбор приложений");
         appList = findViewById(R.id.app_list);
         addb = findViewById(R.id.app_list_add_b);
-        final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
 
 
 
@@ -82,7 +81,6 @@ public class AppListActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 SparseBooleanArray chApps = appList.getCheckedItemPositions();
-                v.startAnimation(animAlpha);
                 Set<String> chAppsSet = new HashSet<>();
                 /*int k = 0;
                 for (int i = 0; i < chApps.size(); i++)

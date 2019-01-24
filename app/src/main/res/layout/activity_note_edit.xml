@@ -28,6 +28,6 @@
         android:layout_height="wrap_content"
         android:onClick="onClick"
         android:textColor="@color/textColor"
-        android:background="@drawable/button_shape"
+        android:theme="@style/StandartButton"
         android:text="Сохранить" />
 </LinearLayout>

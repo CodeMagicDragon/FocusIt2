@@ -41,8 +41,8 @@ import static java.lang.System.in;
 
 public class MainService extends IntentService
 {
-    final String LOG_TAG = "mLog";
-    final String LOG_APP = "mAPP";
+    //final String LOG_TAG = "mLog";
+    //final String LOG_APP = "mAPP";
     Set<String> blockedApps;
     Map<String, Date> APPS;
     Map<String, Long> blockAllTimeList;

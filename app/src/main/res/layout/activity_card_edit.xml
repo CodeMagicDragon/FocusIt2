@@ -71,16 +71,16 @@
             android:id="@+id/edit_card_cancel_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:theme="@style/StandartButton"
             android:textColor="@color/textColor"
-            android:background="@drawable/button_shape"
             android:layout_weight="1"
             android:text="Отмена"/>
         <Button
             android:id="@+id/edit_card_ok_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:theme="@style/StandartButton"
             android:textColor="@color/textColor"
-            android:background="@drawable/button_shape"
             android:layout_weight="1"
             android:text="ОК"/>
     </LinearLayout>

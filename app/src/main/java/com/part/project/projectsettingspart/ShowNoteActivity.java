@@ -21,7 +21,6 @@ public class ShowNoteActivity extends AppCompatActivity
     TextView note;
     ProgressBar progressBar;
     Button nextButton;
-    Animation animAlpha;
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
     boolean createFlag;
@@ -32,7 +31,6 @@ public class ShowNoteActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_note);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
-        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         note = findViewById(R.id.note);
         progressBar = findViewById(R.id.progressBar);
         nextButton = findViewById(R.id.next_btn);
@@ -45,7 +43,6 @@ public class ShowNoteActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                v.startAnimation(animAlpha);
                 if (progressBar.getProgress() == 0)
                 {
                     sp = getApplicationContext().getSharedPreferences("settings", Context.MODE_PRIVATE);

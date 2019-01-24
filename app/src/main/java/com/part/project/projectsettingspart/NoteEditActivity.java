@@ -16,7 +16,6 @@ public class NoteEditActivity extends AppCompatActivity
     EditText note;
     Button noteButton;
     SharedPreferences sPref;
-    Animation animAlpha;
 
 
     @Override
@@ -26,7 +25,6 @@ public class NoteEditActivity extends AppCompatActivity
         setContentView(R.layout.activity_note_edit);
         note = findViewById(R.id.note);
         noteButton = findViewById(R.id.btn_note);
-       animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         sPref = (getApplicationContext()).getSharedPreferences("note_data", Context.MODE_PRIVATE);
         setTitle("Заметки");
         loadText();
@@ -35,7 +33,6 @@ public class NoteEditActivity extends AppCompatActivity
     //@Override
     public void onClick(View v)
     {
-        v.startAnimation(animAlpha);
         if(v.getId() == R.id.btn_note)
         {
             saveText();

@@ -54,7 +54,6 @@ public class CardListEditActivity extends DeleteDialogAbstractActivity
         cardList = findViewById(R.id.card_list);
         createCardButton = findViewById(R.id.create_card_button);
         okButton = findViewById(R.id.set_ok_button);
-        final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         //cancelButton = findViewById(R.id.set_cancel_button);
         textSetName = findViewById(R.id.edit_card_set_name);
         setName = getIntent().getStringExtra("set_name");
@@ -97,7 +96,6 @@ public class CardListEditActivity extends DeleteDialogAbstractActivity
             @Override
             public void onClick(View v)
             {
-                v.startAnimation(animAlpha);
                 intent = new Intent(CardListEditActivity.this, CardEditActivity.class);
                 intent.putExtra("card_id", -1);
                 intent.putExtra("set_name", baseSetName);
@@ -109,7 +107,6 @@ public class CardListEditActivity extends DeleteDialogAbstractActivity
             @Override
             public void onClick(View v)
             {
-                v.startAnimation(animAlpha);
                 if (correctNameCheck())
                 {
                     finish();

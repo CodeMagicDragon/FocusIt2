@@ -40,7 +40,6 @@ public class SettingsActivity extends AppCompatActivity
     SharedPreferences.Editor spEditor;
     Button startFullTestButton;
     Intent intent;
-    Animation animAlpha;
 
 
     @Override
@@ -50,7 +49,6 @@ public class SettingsActivity extends AppCompatActivity
         setContentView(R.layout.activity_settings);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT);
         settingsList = findViewById(R.id.settings_list);
-        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         blockSettingsList = findViewById(R.id.block_settings_list);
         startFullTestButton = findViewById(R.id.start_full_test_button);
         sp = (getApplicationContext()).getSharedPreferences("settings", Context.MODE_PRIVATE);
@@ -107,7 +105,6 @@ public class SettingsActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                v.startAnimation(animAlpha);
                 spEditor.putBoolean("full_set_mode", true);
                 spEditor.apply();
                 startActivity(new Intent(SettingsActivity.this, CardViewActivity.class));

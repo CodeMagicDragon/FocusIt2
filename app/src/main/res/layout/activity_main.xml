@@ -18,12 +18,8 @@
         android:text="Насторйки"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:background="@drawable/button_shape"
-        android:textColor="@color/textColor"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"/>
+        android:textColor="@color/textColor"
+        android:theme="@style/StandartButton"/>
     <Button
         android:id="@+id/b_edit"
         android:layout_width="210dp"
@@ -31,12 +27,8 @@
         android:text="Редактировать сеты"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="@drawable/button_shape"
-        android:textColor="@color/textColor"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"/>
+        android:textColor="@color/textColor"
+        android:theme="@style/StandartButton"/>
     <Button
         android:id="@+id/b_download"
         android:layout_width="210dp"
@@ -44,8 +36,8 @@
         android:text="Загрузить сеты"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="@drawable/button_shape"
-        android:textColor="@color/textColor"/>
+        android:textColor="@color/textColor"
+        android:theme="@style/StandartButton"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"

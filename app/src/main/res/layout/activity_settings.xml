@@ -44,7 +44,7 @@
         android:id="@+id/start_full_test_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_shape"
+        android:theme="@style/StandartButton"
         android:textColor="@color/textColor"
         android:text="Тест по всем карточкам"/>
 </LinearLayout>

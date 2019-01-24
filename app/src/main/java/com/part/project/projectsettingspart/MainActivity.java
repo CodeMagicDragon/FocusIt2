@@ -24,7 +24,6 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity
 {
     Button bDownload, bEdit, bSettings;
-    Animation animAlpha;
     public static boolean needPermissionForBlocking(Context context)
     {
         try {
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity
         bDownload = findViewById(R.id.b_download);
         bEdit = findViewById(R.id.b_edit);
         bSettings = findViewById(R.id.b_settings);
-        animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         bDownload.setOnClickListener(click);
         bEdit.setOnClickListener(click);
         bSettings.setOnClickListener(click);
@@ -75,17 +73,14 @@ public class MainActivity extends AppCompatActivity
             switch (v.getId())
             {
                 case R.id.b_settings:
-                    v.startAnimation(animAlpha);
                     startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                     // go to settings
                     break;
                 case R.id.b_edit:
-                    v.startAnimation(animAlpha);
                     startActivity(new Intent(MainActivity.this, SetActivity.class));
                     // go to card set list
                     break;
                 case R.id.b_download:
-                    v.startAnimation(animAlpha);
                     startActivity(new Intent(MainActivity.this, DownloadActivity.class));
                     // go to web part
                     break;

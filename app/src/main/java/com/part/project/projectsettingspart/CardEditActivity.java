@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -37,7 +35,6 @@ public class CardEditActivity extends AppCompatActivity
         cardFirstText = findViewById(R.id.edit_card_first_text);
         cardSecondText = findViewById(R.id.edit_card_second_text);
         okButton = findViewById(R.id.edit_card_ok_button);
-        final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         cancelButton = findViewById(R.id.edit_card_cancel_button);
         buttonId = (getIntent()).getIntExtra("card_id", -1);
         setName = (getIntent()).getStringExtra("set_name");
@@ -60,7 +57,6 @@ public class CardEditActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 card.name = cardName.getText().toString();
-                v.startAnimation(animAlpha);
                 Card c = cd.getByName(card.name);
                 if ((c == null || c.id == buttonId) && card.name != "")
                 {

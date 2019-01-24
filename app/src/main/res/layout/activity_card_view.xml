@@ -55,7 +55,7 @@
         android:layout_weight="4"
         android:textColor="@color/textColor"
         android:visibility="invisible"
-        android:background="@drawable/button_shape"
+        android:theme="@style/StandartButton"
         android:text="Далее"/>
 
     <View
