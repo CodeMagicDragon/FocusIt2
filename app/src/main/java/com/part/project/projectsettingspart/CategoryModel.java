@@ -1,11 +1,12 @@
 package com.part.project.projectsettingspart;
 
-public class CategoryModel {
+import java.io.Serializable;
 
-    String word, translate, language, cardTheme;
+public class CategoryModel implements Serializable {
+
+    public String word, translate, language, cardTheme;
 
     public CategoryModel(){
-
     }
 
     public CategoryModel(String word, String translate, String language, String cardTheme) {
