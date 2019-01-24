@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.part.project.projectsettingspart">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="Focus It"
+        android:roundIcon="@mipmap/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".SetActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".AppListActivity"
+            android:launchMode="singleTop" />
+
+        <service
+            android:name=".MainService"
+            android:exported="false" />
+
+        <activity
+            android:name=".SetChooseActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".CardViewActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".LoadActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".CardListEditActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".CardEditActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ShowNoteActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".NoteEditActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".FullBlockActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".FirstScreenActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/FirstScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DownloadActivity"
+            android:launchMode="singleTop"/>
+    </application>
+
+</manifest>

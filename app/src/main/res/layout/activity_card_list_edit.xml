@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardListEditActivity"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/edit_card_set_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:focusedByDefault="false"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/backgroundLightColor"
+        android:backgroundTint="@color/textTintColor"
+        android:textCursorDrawable="@color/textTintColor"
+        android:textAlignment="center"
+        android:hint="Название сета"/>
+    <ListView
+        android:id="@+id/card_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+    </ListView>
+    <Button
+        android:id="@+id/create_card_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/StandartButton"
+        android:textColor="@color/textColor"
+        android:text="Добавить карточку"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/set_ok_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/textColor"
+            android:theme="@style/StandartButton"
+            android:layout_weight="1"
+            android:text="Сохранить"/>
+    </LinearLayout>
+</LinearLayout>
