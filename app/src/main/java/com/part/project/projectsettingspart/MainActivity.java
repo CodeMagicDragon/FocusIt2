@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity
         {
             startActivityForResult(new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS), 0);
         }
-        Log.d("mSTART", "                      start");
         startService(new Intent(MainActivity.this, MainService.class));
         /*SharedPreferences sp = (getApplicationContext()).getSharedPreferences("settings", Context.MODE_PRIVATE);
         SharedPreferences.Editor spEditor = sp.edit();

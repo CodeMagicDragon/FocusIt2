@@ -135,7 +135,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                                     cd.insert(c);
                                 }
                             }
-                            Toast.makeText(context, "Сет скачан", Toast.LENGTH_SHORT).show();
+                            Toast toast = Toast.makeText(context, "Сет скачан", Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.CENTER, 0, 0);
+                            toast.show();
                         }
                     }
                 });

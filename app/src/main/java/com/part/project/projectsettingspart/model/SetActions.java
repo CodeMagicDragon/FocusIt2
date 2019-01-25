@@ -12,6 +12,7 @@ import java.util.Set;
 public class SetActions
 {
     AppDatabase database;
+    int cardNum = 3;
 
     public String[] loadSetNames()
     {
@@ -46,12 +47,12 @@ public class SetActions
         c.secondText = secondText;
         return c;
     }
-    public Card getRandomCard(Card[] set)
+    public Card getThreeRandomCards(Card[] set)
     {
         if (set == null || set.length == 0)
         {
             return CardBuilder(0, "null", "null", "null", "null");
         }
-        return set[(int)(Math.random() * set.length)];
+        return set[(int) (Math.random() * set.length)];
     }
 }

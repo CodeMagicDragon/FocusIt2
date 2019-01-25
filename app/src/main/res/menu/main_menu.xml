@@ -3,7 +3,7 @@
     xmlns:item_settings="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_active_mode_item"
-        android:title="Редактирование"
+        android:title="@string/edit"
         item_settings:showAsAction="always"/>
     <!--<item
         android:id="@+id/menu_edit_mode_item"

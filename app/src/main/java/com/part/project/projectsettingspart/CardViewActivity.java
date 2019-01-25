@@ -60,7 +60,7 @@ public class CardViewActivity extends AppCompatActivity
             cards = new Card[cardNum];
             for (int i = 0; i < cardNum; i++)
             {
-                cards[i] = (new SetActions()).getRandomCard(App.getInstance().getAppDatabase().getCardDao().getBySetName(cardSetName));
+                cards[i] = (new SetActions()).getThreeRandomCards(App.getInstance().getAppDatabase().getCardDao().getBySetName(cardSetName));
             }
         }
         else

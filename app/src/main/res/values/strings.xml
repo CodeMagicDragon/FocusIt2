@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">ProjectSettingsPart</string>
-    <string name="del">Удаление</string>
-    <string name="edit">Редактирование</string>
+    <string name="del">Режим: Удаление</string>
+    <string name="edit">Режим: Редактирование</string>
 </resources>

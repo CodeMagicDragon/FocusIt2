@@ -12,6 +12,8 @@ import android.widget.Button;
 public class FullBlockActivity extends AppCompatActivity
 {
     Button homeButton;
+    boolean createFlag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -19,6 +21,7 @@ public class FullBlockActivity extends AppCompatActivity
         setContentView(R.layout.activity_full_block);
         homeButton = findViewById(R.id.home_button);
         getSupportActionBar().hide();
+        createFlag = true;
         homeButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -31,5 +34,16 @@ public class FullBlockActivity extends AppCompatActivity
             }
         });
         //setTitle("Oops...");
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        if (!createFlag)
+        {
+            finish();
+        }
+        createFlag = false;
     }
 }
