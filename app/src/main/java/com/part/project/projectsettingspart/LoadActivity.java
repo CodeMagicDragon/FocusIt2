@@ -40,7 +40,7 @@ public class LoadActivity extends AppCompatActivity
         }
         else
         {
-            finish();;
+            finish();
         }
     }
 
@@ -53,8 +53,8 @@ public class LoadActivity extends AppCompatActivity
             appName = new LinkedList<>();
             appPackage = new LinkedList<>();
             for (ApplicationInfo as : appInfoList) {
-                /*try
-                {*/
+                try
+                {
                 //PackageInfo pi = pm.getPackageInfo(as.packageName, 0);
                 if ((/*ApplicationInfo.CATEGORY_GAME*/ 0 <= as.category
                         && as.category <= 7 /*ApplicationInfo.CATEGORY_PRODUCTIVITY*/) || as.packageName.equals("com.vkontakte.android"))
@@ -62,11 +62,12 @@ public class LoadActivity extends AppCompatActivity
                     appPackage.add(as.packageName);
                     appName.add(pm.getApplicationLabel(as).toString());
                 }
-                /*}
-                catch (PackageManager.NameNotFoundException e)
+                }
+                catch (Exception e)
                 {
-                    e.printStackTrace();
-                }*/
+                    appPackage.add(as.packageName);
+                    appName.add(pm.getApplicationLabel(as).toString());
+                }
             }
             return null;
         }

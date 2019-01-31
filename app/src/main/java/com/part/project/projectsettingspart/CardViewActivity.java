@@ -168,12 +168,12 @@ public class CardViewActivity extends AppCompatActivity
                 if (progressBar.getProgress() >= progressBar.getMax())
                 {
                     showTranslate(ind);
-                    nextButton.setText("Next");
                     runOnUiThread(new Runnable()
                     {
                         @Override
                         public void run()
                         {
+                            nextButton.setText("Далее");
                             progressBar.setVisibility(View.INVISIBLE);
                             nextButton.setVisibility(View.VISIBLE);
                         }
